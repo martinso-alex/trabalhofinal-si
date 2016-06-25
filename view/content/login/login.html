@@ -1,0 +1,33 @@
+
+    <link rel="stylesheet" href="assets/css/login.css">
+
+        <h1>Login</h1>
+        <div id="login-fail" class="alert">Username ou Password incorretos!<span id="close-alert">&times;</span></div>
+        <!-- Login Container -->
+        <section class="login">
+            <form action="" method="post">
+            	
+                <!-- The Username Field -->
+                <label for="username">Username
+                <input type="text" name="username" id="username" />
+            	</label>
+                
+                <!-- The Password Field -->
+                <label for="password">Password
+                <input type="password" name="password" id="password" />
+                </label>
+                
+                <!-- The Remember Me Checkbox -->
+                <input type="checkbox" name="remember" id="remember" />
+                <label class="check" for="remember"><span></span>Remember Me</label>
+                
+                <!-- Clearn both sides -->
+                <div class="clear"></div>
+                
+                <!-- Recover Button -->
+                <input style="cursor:pointer" type="button" value="Recover" />
+                
+                <!-- The Login Button -->
+                <input id="login" style="float:right; cursor:pointer" type="button" value="Login" />
+            </form>
+        </section>

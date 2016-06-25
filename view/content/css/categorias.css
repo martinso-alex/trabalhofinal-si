@@ -1,0 +1,48 @@
+#table{
+	margin: 5%;
+	margin-left: 15%;
+	width: 50%;
+}
+
+.del-cat, .alt-cat{
+	margin-left: 10px;
+}
+
+.del-cat:hover{
+	cursor: pointer;
+	color: #e74c3c;
+}
+
+.alt-cat:hover{
+	cursor: pointer;
+	color: #4aa3df;
+}
+
+h2{
+	margin: 5%;
+}
+
+form{
+	margin-left: 15%;
+}
+
+#confirm-add, #confirm-alt, #unconfirm-alt{
+	display: inline-block;
+	margin-left: 3%;
+	background-color: #95a5a6;
+	color: #ecf0f1;
+	padding: 15px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-radius: 50%;
+}
+
+#confirm-add:hover, #confirm-alt:hover{
+	background-color: #4aa3df;
+	cursor: pointer;
+}
+
+#unconfirm-alt:hover{
+	background-color: #e74c3c;
+	cursor: pointer;
+}
