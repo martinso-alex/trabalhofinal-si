@@ -28,9 +28,31 @@ class AtracaoService{
 
 	}
 
-	public static function getById($id){
+	public static function existeId($id){
 
-		return AtracaoDao::getById($id);
+		$atr = AtracaoDao::getById($id);
+
+		if($atr != null){
+			return true;
+		}else if($nome === ""){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
+	public static function existeNome($nome){
+
+		$atr = AtracaoDao::getByNome($nome);
+
+		if($atr != null){
+			return true;
+		}else if($nome === ""){
+			return true;
+		}else{
+			return false;
+		}
 
 	}
 

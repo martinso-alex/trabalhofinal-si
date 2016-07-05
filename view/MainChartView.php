@@ -46,9 +46,25 @@ class MainChartView{
 
 	}
 
-	public static function exibeAtracoes($atracoes){
+	public static function exibeAtracoes($atracoes,$categorias){
 
-		$view = file_get_contents('../view/content/main-chart/atracoes.html');
+		$view = file_get_contents('../view/content/main-chart/add-atracoes.html');
+
+		if($categorias != null){
+			for($i = 0;$i < sizeof($categorias);$i++){
+				$view .= "<option value='".$categorias[$i]->getId()."'>".$categorias[$i]->getNome()."</option>";
+			}
+		}
+
+		$view .= file_get_contents('../view/content/main-chart/alt-atracoes.html');
+
+		if($categorias != null){
+			for($i = 0;$i < sizeof($categorias);$i++){
+				$view .= "<option value='".$categorias[$i]->getId()."'>".$categorias[$i]->getNome()."</option>";
+			}
+		}
+
+		$view .= file_get_contents('../view/content/main-chart/tbl-atracoes.html');
 
 		if($atracoes != null){
 			for($i = 0;$i < sizeof($atracoes);$i++){
@@ -63,11 +79,11 @@ class MainChartView{
 				$view .= "</td>";
 
 				$view .= "<td>";
-				$view .= $atracoes[$i]->getHorario();
+				$view .= $atracoes[$i]->getDescricao();
 				$view .= "</td>";
 
 				$view .= "<td>";
-				$view .= $atracoes[$i]->getDescricao();
+				$view .= $atracoes[$i]->getHorario();
 				$view .= "</td>";
 
 				$view .= "<td>";
@@ -91,6 +107,17 @@ class MainChartView{
 		$view .= "</div>";
 
 		echo $view;
+
+	}
+
+	public static function exibeErro(){
+
+		$view = "<div class=\"alert alert-danger\">";
+		$view .= "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+		$view .= "Categoria já existente ou em branco!";
+		$view .= "</div>";
+
+		echo $view;	
 
 	}
 

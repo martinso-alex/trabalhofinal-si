@@ -28,9 +28,29 @@ class CategoriaService{
 
 	}
 
-	public static function getById($id){
+	public static function existeId($id){
 
-		return CategoriaDao::getById($id);
+		$cat = CategoriaDao::getById($id);
+
+		if($cat != null){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
+	public static function existeNome($nome){
+
+		$cat = CategoriaDao::getByNome($nome);
+
+		if($cat != null){
+			return true;
+		}else if($nome === ""){
+			return true;
+		}else{
+			return false;
+		}
 
 	}
 

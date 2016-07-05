@@ -30,7 +30,7 @@ class CategoriaDao{
 
 	public static function getCategorias(){
 
-		$sql = "SELECT * FROM CATEGORIA";
+		$sql = "SELECT * FROM CATEGORIA ORDER BY ID";
 		$result = ConnectionUtil::executarSelect($sql);
 
 		return CategoriaDao::parseList($result);
@@ -61,6 +61,14 @@ class CategoriaDao{
 	public static function getById($id){
 
 		$sql = "SELECT * FROM CATEGORIA WHERE ID = " . $id;
+		$result = ConnectionUtil::executarSelect($sql);
+		return CategoriaDao::parse($result[0]);
+
+	}
+
+	public static function getByNome($nome){
+
+		$sql = "SELECT * FROM CATEGORIA WHERE NOME = '" . $nome . "'";
 		$result = ConnectionUtil::executarSelect($sql);
 		return CategoriaDao::parse($result[0]);
 

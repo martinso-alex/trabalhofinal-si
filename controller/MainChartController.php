@@ -25,7 +25,8 @@ switch ($func) {
 	case 'atra':
 
 		$atracoes = AtracaoService::getAtracoes();
-		MainChartView::exibeAtracoes($atracoes);
+		$categorias = CategoriaService::getCategorias();
+		MainChartView::exibeAtracoes($atracoes,$categorias);
 
 	break;
 

@@ -8,6 +8,7 @@
         <script type="text/javascript" src="controller/js/login.js"></script>
         <script type="text/javascript" src="controller/js/main-chart.js"></script>
         <script type="text/javascript" src="controller/js/categorias.js"></script>
+        <script type="text/javascript" src="controller/js/atracoes.js"></script>
     
   </head>
 

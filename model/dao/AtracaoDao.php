@@ -73,10 +73,15 @@ class AtracaoDao{
 
 	public static function getById($id){
 
-		$sql = "SELECT ATRACAO.ID AS ID, ATRACAO.NOME AS NOME, LOCAL, HORARIO, DESCRICAO, CATEGORIA.NOME AS CATEGORIA 
-				FROM ATRACAO,CATEGORIA 
-				WHERE ID_CAT = CATEGORIA.ID AND ID = ".$id;
+		$sql = "SELECT * FROM ATRACAO WHERE ID = " . $id;
+		$result = ConnectionUtil::executarSelect($sql);
+		return AtracaoDao::parse($result[0]);
 
+	}
+
+	public static function getByNome($nome){
+
+		$sql = "SELECT * FROM ATRACAO WHERE NOME = '" . $nome . "'";
 		$result = ConnectionUtil::executarSelect($sql);
 		return AtracaoDao::parse($result[0]);
 
